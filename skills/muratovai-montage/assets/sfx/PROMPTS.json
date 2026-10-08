@@ -1,0 +1,40 @@
+{
+ "_generator": "ElevenLabs Sound Effects (POST /v1/sound-generation, prompt_influence 0.6) by the kit's author on a paid ElevenLabs plan; then: leading silence removed, highpass 90 Hz, 48 kHz stereo, peak normalised to -3 dBFS, 0.12 s fade-out. Other classes: prompts in scripts/sfx_gen.py (ElevenLabs) or scripts/sfx_synth.py (procedural).",
+ "typing/typing_a.wav": [
+  "Fast typing on a smartphone on-screen keyboard, soft rapid clicks, continuous, dry",
+  2.5
+ ],
+ "count/count_a.wav": [
+  "fast soft digital counter ticking, numbers rolling up quickly, subtle, dry",
+  1.2
+ ],
+ "riser_soft/riser_soft_a.wav": [
+  "short soft riser swell for a video transition, airy, 1 second, no hit at the end",
+  1.0
+ ],
+ "tap/tap_a.wav": [
+  "Single soft tap click on a smartphone touch screen, short dry UI click",
+  0.5
+ ],
+ "toggle/toggle_a.wav": [
+  "UI switch toggle click, single short mechanical click, dry",
+  0.5
+ ],
+ "send/send_a.wav": [
+  "Message sent swoosh, short rising whoosh with soft pop at the end, clean",
+  0.8
+ ],
+ "shutter/shutter_a.wav": [
+  "Smartphone camera shutter click, single, clean",
+  0.6
+ ],
+ "blip/blip_a.wav": [
+  "soft glitchy digital blip, short, modern tech ui, subtle, dry",
+  0.5
+ ],
+ "reveal/reveal_a.wav": [
+  "Short magical shimmer chime rising, sparkle reveal sound, clean, positive",
+  1.2
+ ],
+ "whoosh_low/whoosh_low_d.wav": "ElevenLabs Sound Effects, a fourth low whoosh; its exact prompt was not recorded"
+}

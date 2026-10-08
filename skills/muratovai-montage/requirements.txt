@@ -1,0 +1,8 @@
+# required
+numpy>=1.24
+Pillow>=10
+# optional, install what you need:
+# yt-dlp                            # download reference reels without Apify (or: brew install yt-dlp)
+# opencv-python-headless<5          # face track when Apple Vision is not available (OpenCV 5 has no Haar cascades)
+# playwright                        # site screenshots in fetch_assets.py (then: playwright install chromium)
+# demucs                            # sound stems in analyze_reference.py (best in its own venv; set DEMUCS_PY)

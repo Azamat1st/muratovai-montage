@@ -1,0 +1,490 @@
+{
+ "meta": {
+  "title": "Example plan: a fictional AI model (EN)",
+  "lang": "en",
+  "style": "_defaults",
+  "profile": "bold",
+  "accent": "#E551BA",
+  "accent_face": "#FF7AD1",
+  "music": "ambient_tech_90",
+  "flash_start": true,
+  "cta_word": "NOVA"
+ },
+ "beats": [
+  {
+   "_note": "HOOK: who made it and where they came from (brand = logo/icon, a decoding pixel title from frame 0)",
+   "t0": 0,
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "title",
+    "font": "block",
+    "text": "NEW AI MODEL",
+    "decode": true,
+    "icon": "assets/icon_openai_com.png",
+    "icon_size": 190,
+    "size": 84
+   }
+  },
+  {
+   "_note": "HOOK: the company they left (named brand → its logo)",
+   "t0": "w:5",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "logo",
+    "src": "assets/icon_openai_com.png",
+    "label": "OpenAI",
+    "size": 280
+   }
+  },
+  {
+   "_note": "PROOF: the new model's site (claim → real page on a dark full-frame card)",
+   "t0": "w:8",
+   "layout": "graphic",
+   "bg": "dark",
+   "gfx": {
+    "type": "shot",
+    "src": "assets/shot_example.png",
+    "crop": [
+     0,
+     80,
+     1080,
+     900
+    ],
+    "width": 900
+   }
+  },
+  {
+   "_note": "NUM: first number, own beat, serif counter, no caption",
+   "t0": "w:14",
+   "layout": "graphic",
+   "bg": "white",
+   "caption": "none",
+   "gfx": {
+    "type": "counter",
+    "text": "200×",
+    "label": "times faster",
+    "font": "serif",
+    "size": 300,
+    "t": "w:15"
+   }
+  },
+  {
+   "_note": "NUM + PAYOFF: second number in the accent colour",
+   "t0": "w:18",
+   "layout": "graphic",
+   "bg": "white",
+   "caption": "none",
+   "gfx": {
+    "type": "counter",
+    "text": "400×",
+    "label": "times cheaper",
+    "font": "serif",
+    "size": 300,
+    "t": "w:19",
+    "color": "#E551BA"
+   }
+  },
+  {
+   "_note": "PAYOFF: 'free, anyone can use it' → face close-up, one keyword in the accent",
+   "t0": "w:22",
+   "layout": "face",
+   "caption_style": "mix",
+   "emph": [
+    "free"
+   ]
+  },
+  {
+   "_note": "MECH: 'I'll show you step by step' → mini app widget with a progress bar",
+   "t0": "w:31",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "widget",
+    "icon": "assets/emoji_robot.png",
+    "name": "Nova setup",
+    "status": "STEP BY STEP",
+    "progress": [
+     0.08,
+     1.0
+    ]
+   }
+  },
+  {
+   "_note": "BRIDGE: 'save this' → short face breather",
+   "t0": "w:42",
+   "layout": "face",
+   "caption_style": "mix",
+   "emph": [
+    "save"
+   ]
+  },
+  {
+   "_note": "MECH: two brands in a row → logo relay",
+   "t0": "w:45",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "logos",
+    "items": [
+     {
+      "src": "assets/logo_google.svg",
+      "label": "Google",
+      "t": "w:47"
+     },
+     {
+      "src": "assets/emoji_robot.png",
+      "label": "Nova",
+      "t": "w:49"
+     }
+    ]
+   }
+  },
+  {
+   "_note": "MECH: console steps → terminal lines appear on the verbs",
+   "t0": "w:50",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "terminal",
+    "title": "console.example.com",
+    "lines": [
+     {
+      "text": "open console → Keys",
+      "t": "w:50"
+     },
+     {
+      "text": "+ Create new API key",
+      "t": "w:56",
+      "prompt": false,
+      "color": "#9aa0ab"
+     },
+     {
+      "text": "✔ key created: nova_••••••4kQ9",
+      "t": "w:59",
+      "prompt": false,
+      "color": "#34D399"
+     }
+    ]
+   }
+  },
+  {
+   "_note": "NAME: the tool you paste the prompt into → big logo",
+   "t0": "w:61",
+   "layout": "graphic",
+   "bg": "white",
+   "gfx": {
+    "type": "logo",
+    "src": "assets/logo_claude.svg",
+    "label": "Claude Code",
+    "size": 340,
+    "t": "w:63"
+   }
+  },
+  {
+   "_note": "PROOF: the prompt itself → terminal on dark",
+   "t0": "w:69",
+   "layout": "graphic",
+   "bg": "dark",
+   "gfx": {
+    "type": "terminal",
+    "title": "Claude Code",
+    "lines": [
+     {
+      "text": "Sort my inbox data with Nova…",
+      "t": "w:69"
+     },
+     {
+      "text": "1. key: NOVA_API_KEY",
+      "prompt": false,
+      "color": "#9aa0ab",
+      "t": "w:71"
+     },
+     {
+      "text": "2. categories, urgent, spam",
+      "prompt": false,
+      "color": "#9aa0ab",
+      "t": "w:73"
+     }
+    ]
+   }
+  },
+  {
+   "_note": "MECH: 'goes through huge amounts of data' → hub with the tool in the centre",
+   "t0": "w:76",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "hub",
+    "center": "assets/emoji_robot.png",
+    "nodes": [
+     {
+      "src": "assets/logo_claude.svg",
+      "t": "w:77"
+     },
+     {
+      "src": "assets/icon_openai_com.png",
+      "t": "w:80"
+     },
+     {
+      "src": "assets/emoji_e-mail.png",
+      "t": "w:83"
+     },
+     {
+      "src": "assets/emoji_star.png",
+      "t": "w:84"
+     },
+     {
+      "src": "assets/emoji_speech_balloon.png",
+      "t": "w:86"
+     },
+     {
+      "src": "assets/emoji_megaphone.png",
+      "t": "w:87"
+     }
+    ]
+   }
+  },
+  {
+   "_note": "LIST: four kinds of data → logo relay of 3D emoji with labels, no caption",
+   "t0": "w:90",
+   "layout": "graphic",
+   "bg": "white",
+   "caption": "none",
+   "gfx": {
+    "type": "logos",
+    "size": 300,
+    "items": [
+     {
+      "src": "assets/emoji_e-mail.png",
+      "label": "Emails",
+      "t": "w:92"
+     },
+     {
+      "src": "assets/emoji_star.png",
+      "label": "Reviews",
+      "t": "w:93"
+     },
+     {
+      "src": "assets/emoji_speech_balloon.png",
+      "label": "Requests",
+      "t": "w:95"
+     },
+     {
+      "src": "assets/emoji_megaphone.png",
+      "label": "Ads",
+      "t": "w:97"
+     }
+    ]
+   }
+  },
+  {
+   "_note": "MECH: sorts, flags urgent, drops spam → switcher; states flip on the verbs",
+   "t0": "w:98",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "switcher",
+    "status": "Sorting into categories...",
+    "cards": [
+     {
+      "src": "assets/emoji_stopwatch.png",
+      "label": "Urgent"
+     },
+     {
+      "src": "assets/emoji_money_bag.png",
+      "label": "Buyers"
+     },
+     {
+      "src": "assets/emoji_e-mail.png",
+      "label": "Support"
+     },
+     {
+      "src": "assets/emoji_megaphone.png",
+      "label": "Spam"
+     }
+    ],
+    "seq": [
+     {
+      "t": "w:105",
+      "index": 0
+     },
+     {
+      "t": "w:108",
+      "index": 3,
+      "status": "✓ 200 sorted"
+     }
+    ]
+   }
+  },
+  {
+   "_note": "PAYOFF: 'like nothing else' → face close-up, keyword in the accent",
+   "t0": "w:109",
+   "layout": "face",
+   "caption_style": "mix",
+   "emph": [
+    "data"
+   ]
+  },
+  {
+   "_note": "BRIDGE: metaphor, no product → 3D emoji on dark",
+   "t0": "w:116",
+   "layout": "graphic",
+   "bg": "dark",
+   "gfx": {
+    "type": "emoji",
+    "src": "assets/emoji_rocket.png",
+    "size": 520
+   }
+  },
+  {
+   "_note": "NUM: a user ran N ads → counter with an 'over' line, no caption",
+   "t0": "w:122",
+   "layout": "graphic",
+   "bg": "white",
+   "caption": "none",
+   "gfx": {
+    "type": "counter",
+    "text": "742",
+    "label": "ads",
+    "size": 320,
+    "t": "w:125",
+    "over": "one guy ran",
+    "label_t": "w:126"
+   }
+  },
+  {
+   "_note": "NUM: seconds → stopwatch emoji with a label",
+   "t0": "w:130",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "logo",
+    "src": "assets/emoji_stopwatch.png",
+    "plain": true,
+    "size": 300,
+    "label": "40 seconds"
+   }
+  },
+  {
+   "_note": "PAYOFF: better results → chart with a label",
+   "t0": "w:132",
+   "layout": "graphic",
+   "bg": "white",
+   "gfx": {
+    "type": "chart",
+    "bars": [
+     3,
+     4,
+     4,
+     6,
+     8,
+     11
+    ],
+    "label": "↑ better ads",
+    "label_t": "w:138"
+   }
+  },
+  {
+   "_note": "NUM: free tokens → huge serif number over the blurred site",
+   "t0": "w:139",
+   "layout": "graphic",
+   "bg": "dark",
+   "caption": "none",
+   "gfx": {
+    "type": "counter",
+    "text": "120,000,000",
+    "label": "free tokens to start",
+    "font": "serif",
+    "size": 150,
+    "t": "w:141",
+    "bg_src": "assets/shot_example.png"
+   }
+  },
+  {
+   "_note": "PAIN: when they run out → meter fills red",
+   "t0": "w:148",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "meter",
+    "label": "Free tokens running out",
+    "to": 0.97,
+    "t": "w:149"
+   }
+  },
+  {
+   "_note": "MECH: the fallback provider → its icon",
+   "t0": "w:152",
+   "layout": "graphic",
+   "bg": "white",
+   "gfx": {
+    "type": "logo",
+    "src": "assets/icon_openrouter_ai.png",
+    "label": "OpenRouter",
+    "size": 340,
+    "t": "w:154"
+   }
+  },
+  {
+   "_note": "PROOF: a gallery of real projects → site card with browser chrome, box and zoom",
+   "t0": "w:156",
+   "layout": "graphic",
+   "bg": "gray",
+   "gfx": {
+    "type": "shot",
+    "src": "assets/shot_example.png",
+    "chrome": true,
+    "url": "example.com",
+    "width": 940,
+    "crop": [
+     40,
+     180,
+     1180,
+     760
+    ],
+    "box": [
+     250,
+     330,
+     330,
+     260
+    ],
+    "zoom": true
+   }
+  },
+  {
+   "_note": "BRIDGE: new section 'send this to a friend' → face with a warm light leak",
+   "t0": "w:165",
+   "layout": "face",
+   "caption_style": "mix",
+   "emph": [
+    "friend"
+   ],
+   "trans": "leak"
+  },
+  {
+   "_note": "PAYOFF: hours saved → pixel title with a highlight",
+   "t0": "w:175",
+   "layout": "split",
+   "bg": "white",
+   "gfx": {
+    "type": "title",
+    "font": "pixel",
+    "text": "HOURS SAVED",
+    "highlight": [
+     "SAVED"
+    ],
+    "size": 120
+   }
+  },
+  {
+   "_note": "CTA: face close-up to the last frame, the keyword (meta.cta_word) in the accent",
+   "t0": "w:182",
+   "layout": "face",
+   "caption_style": "mix",
+   "cta": true,
+   "emph": []
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+# Check of the student kit on clean Windows and macOS runners, on every push to main and by hand: install from scratch, render the 5-second test reel,
+# cut a person out with the local model, take one site screenshot. No API keys: speech-to-text and Apify are the parts it cannot reach.
+name: kit-check
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      os:
+        description: "which machines"
+        type: choice
+        options: [both, windows, macos]
+        default: both
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON((github.event_name != 'workflow_dispatch' || inputs.os == 'both') && '["windows-latest","macos-latest"]' || format('["{0}-latest"]', inputs.os)) }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 75
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: ffmpeg
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then choco install ffmpeg -y --no-progress; else brew install ffmpeg; fi
+      - name: install.py (no keys, so exit code 2 means the engine works)
+        run: |
+          if [ "$RUNNER_OS" = "macOS" ]; then export PRODUCER_BROWSER_GPU_MODE=software; fi
+          set +e
+          python install.py
+          code=$?
+          echo "install.py exit code: $code"
+          [ "$code" -eq 0 ] || [ "$code" -eq 2 ]
+      - name: install.py --check
+        run: python install.py --check || true
+      - name: off-macOS fallbacks (OpenCV face cascade on Windows, u2net cut-out on both)
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then PY="$LOCALAPPDATA/muratovai-montage/venv/Scripts/python.exe"; else PY="$HOME/.local/share/muratovai-montage/venv/bin/python"; fi
+          if [ "$RUNNER_OS" = "Windows" ]; then "$PY" -c "import cv2; c = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'); assert not c.empty(), 'no Haar cascade'"; fi
+          "$PY" "$HOME/.claude/skills/muratovai-montage/scripts/prep.py" cutout "$HOME/reels/_selftest" --engine u2net
+      - name: site screenshot (Playwright headless shell)
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then PY="$LOCALAPPDATA/muratovai-montage/venv/Scripts/python.exe"; else PY="$HOME/.local/share/muratovai-montage/venv/bin/python"; fi
+          "$PY" "$HOME/.claude/skills/muratovai-montage/scripts/fetch_assets.py" "$RUNNER_TEMP/shot" shot https://example.com example
+          "$PY" -c "import os, sys; sys.exit(0 if os.path.getsize(sys.argv[1]) > 0 else 1)" "$RUNNER_TEMP/shot/assets/shot_example.png"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: selftest-${{ matrix.os }}
+          path: |
+            ~/reels/_selftest/out/selftest_light.mp4
+            ~/reels/_selftest/work/snap_sheet.jpg
+          if-no-files-found: warn

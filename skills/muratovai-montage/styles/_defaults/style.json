@@ -1,0 +1,125 @@
+{
+ "name": "_defaults",
+ "description": "Engine fallback numbers, not a style: they fill fields a style profile does not have. Make a style profile from 2–5 reels of a creator you like (SKILL.md part A) and edit with it.",
+ "reels": 0,
+ "pace": {
+  "wps": 4.02,
+  "gap_p90": 0.08,
+  "duration": [
+   21,
+   58
+  ],
+  "first_change": {
+   "lo": 1.1,
+   "hi": 3.1,
+   "median": 1.61
+  },
+  "beat_len_median": 1.81,
+  "layout_run_median": 2.0,
+  "hard_cuts_per_10s": [
+   3.6,
+   5.0
+  ]
+ },
+ "layouts": {
+  "split": {
+   "lo": 0.15,
+   "hi": 0.55,
+   "median": 0.31
+  },
+  "graphic": {
+   "lo": 0.25,
+   "hi": 0.62,
+   "median": 0.43
+  },
+  "face": {
+   "lo": 0.12,
+   "hi": 0.35,
+   "median": 0.25
+  }
+ },
+ "open_layout": "split",
+ "close_layout": "face",
+ "face_max_run": 4.5,
+ "captions": {
+  "words_per_chunk": 2,
+  "always_on": true
+ },
+ "sound": {
+  "lufs": -14.2,
+  "true_peak": -0.6,
+  "music_rel_voice_db": -26.1,
+  "music_mix_rel_db": -28.0,
+  "music_share": 0.93,
+  "sfx_per_10s": {
+   "lo": 3.5,
+   "hi": 5.3,
+   "median": 4.62
+  },
+  "cuts_with_sfx": 0.08
+ },
+ "framing": {
+  "split": {
+   "w": 418,
+   "eye": 1337,
+   "cx": 549
+  },
+  "close": {
+   "w": 754,
+   "eye": 732,
+   "cx": 541
+  },
+  "medium": {
+   "w": 600,
+   "eye": 800,
+   "cx": 540
+  },
+  "split25": {
+   "w": 360,
+   "eye": 1210,
+   "cx": 540
+  },
+  "close25": {
+   "w": 700,
+   "eye": 672,
+   "cx": 540
+  }
+ },
+ "plan_defaults": {
+  "era": "2026",
+  "accent": "#D97757",
+  "music": "tense_a",
+  "trans": "auto"
+ },
+ "eras": {
+  "2025": {
+   "layouts": {
+    "split": {
+     "lo": 0.03,
+     "hi": 0.3,
+     "median": 0.08
+    },
+    "graphic": {
+     "lo": 0.55,
+     "hi": 0.9,
+     "median": 0.77
+    },
+    "face": {
+     "lo": 0.05,
+     "hi": 0.25,
+     "median": 0.14
+    }
+   },
+   "sound": {
+    "music_rel_voice_db": -13.3,
+    "music_mix_rel_db": -12.0,
+    "sfx_per_10s": {
+     "lo": 11.0,
+     "hi": 15.0,
+     "median": 11.4
+    },
+    "cuts_with_sfx": 0.3
+   }
+  }
+ }
+}

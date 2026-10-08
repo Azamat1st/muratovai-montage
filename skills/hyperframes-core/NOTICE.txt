@@ -1,0 +1,1 @@
+Unmodified copy of skills/hyperframes-core from https://github.com/heygen-com/hyperframes (commit 162de1a), Copyright HeyGen, licensed under the Apache License 2.0 (LICENSE.txt). Bundled with the muratovai-montage kit for offline install.
