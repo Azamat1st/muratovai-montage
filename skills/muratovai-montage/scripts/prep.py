@@ -382,6 +382,7 @@ def cutout(P, engine="auto"):
     binp = vision_bin("person_mask") if engine in ("auto", "vision") else None
     if engine == "vision" and not binp: raise SystemExit("cutout: Apple Vision is unavailable here (macOS 12+ only); use --engine u2net")
     if binp:
+        if os.path.exists(f"{P}/work/clean_mask.mp4"): os.remove(f"{P}/work/clean_mask.mp4")   # AVAssetWriter traps on an existing file (a re-cut take)
         sh(binp, f"{P}/work/clean.mp4", f"{P}/work/clean_mask.mp4")
         sh("ffmpeg", "-y", "-v", "error", "-i", f"{P}/work/clean.mp4", "-i", f"{P}/work/clean_mask.mp4", "-filter_complex",
            "[1:v]format=gray,scale=1080:1920[m];[0:v][m]alphamerge,format=yuva420p[v]", "-map", "[v]", "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "20",

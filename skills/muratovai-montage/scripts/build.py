@@ -164,7 +164,7 @@ def face_moves(ctx, t0, t1, threshold=38):
 
 def transform(face, mode, smax):
     tg = FRAME[mode]; s = max(0.55, min(smax, tg["w"] / face["w"]))
-    if mode not in ("split", "split25"): s = max(1.0, s)   # a full-frame face is never smaller than the source (no black bars)
+    if mode != "split": s = max(1.0, s)   # a full-width face (incl. the 2025 half) is never smaller than the source (no side bars); the 2026 arch has margins
     tx = tg["cx"] - s * face["cx"]; ty = tg["eye"] - s * face["eye"]
     if mode == "split":
         tx = min(tx, ARCH["side"]); tx = max(tx, W - ARCH["side"] - s * W); ty = max(ty, H - s * H)
@@ -803,7 +803,7 @@ def build(P):
             TP = 0.2; head_t = t0 + TP
             ctx.add(f"tl.fromTo(['#plate-inner','#cut-inner'],{{{st(prev)}}},{{{st(cur)},duration:{TP},ease:'power3.out'}},{t0:.3f});")
             if prev["clip"] != cur["clip"]: ctx.add(f"tl.fromTo('#plate',{{clipPath:'{prev['clip']}'}},{{clipPath:'{cur['clip']}',duration:0.12,ease:'power2.out'}},{t0:.3f});")
-            ctx.add(f"tl.set('#plate',{{opacity:1}},{t0:.3f});tl.fromTo('#plate',{{filter:'blur(6px)'}},{{filter:'blur(0px)',duration:0.24,ease:'power2.out'}},{t0:.3f});")
+            ctx.add(f"tl.set('#plate',{{opacity:1}},{t0:.3f});tl.fromTo('#plate',{{filter:'blur(6px)'}},{{filter:'blur(0px)',duration:0.24,ease:'power2.out',immediateRender:false}},{t0:.3f});")   # without immediateRender:false the speaker is blurred from frame 0
             if prev["cut"] and not cur["cut"]: ctx.add(f"tl.fromTo('#cut',{{opacity:1}},{{opacity:0,duration:0.1}},{t0:.3f});")
             elif cur["cut"] and not prev["cut"]: ctx.add(f"tl.fromTo('#cut',{{opacity:0}},{{opacity:1,duration:0.12}},{t0 + 0.1:.3f});")
             else: ctx.add(f"tl.set('#cut',{{opacity:{cur['cut']}}},{t0:.3f});")
